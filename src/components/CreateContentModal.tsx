@@ -18,26 +18,29 @@ interface CreateContentModelProps {
 // controlled component
 
 export function CreateContentModal({open, onClose} : CreateContentModelProps) {
-    const titleRef = useRef<HTMLInputElement>();
-    const linkRef = useRef<HTMLInputElement>();
+    const titleRef = useRef<HTMLInputElement>(null);
+    const linkRef = useRef<HTMLInputElement>(null);
     const [type, setType] = useState(ContentType.Youtube);
 
     async function addContent() {
         const title = titleRef.current?.value;
         const link = linkRef.current?.value;
 
-        await axios.post(`${BACKEND_URL}/api/v1/content`, {
-            link,
-            title,
-            type
-        }, {
-            headers: {
-                "Authorization": localStorage.getItem("token")
-            }
-        })
+        try {
+            await axios.post(`${BACKEND_URL}/api/v1/content`, {
+                link,
+                title,
+                type
+            }, {
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem("token")}` // <-- Added Bearer prefix here
+                }
+            });
 
-        onClose();
-
+            onClose();
+        } catch (error) {
+            console.error("Error adding content:", error);
+        }
     }
 
     return <div>

@@ -97,24 +97,23 @@ export function LandingPage() {
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
           <a href="#features" className="hover:text-white transition-colors">Features</a>
           <a href="#share" className="hover:text-white transition-colors">Open Sharing</a>
-          <a href="#demo" className="hover:text-white transition-colors">Demo</a>
-          <a href="/signup" className="hover:text-white transition-colors">Sign Up</a>
+          <Link to="/signup" className="hover:text-white transition-colors">Sign Up</Link>
         </div>
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-3">
           <Link
             to="/signin"
-            className="px-5 py-2.5 rounded-full bg-purple-900 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all text-sm font-medium hover:scale-105 text-gray-300 hover:text-white"
-        >
-        Sign In
-        </Link>
+            className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all text-sm font-medium hover:scale-105 text-gray-300 hover:text-white"
+          >
+            Sign In
+          </Link>
           <Link
             to="/signup"
-            className="px-5 py-2.5 rounded-full bg-purple-900 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all text-sm font-medium hover:scale-105 text-gray-300 hover:text-white"
-        >
-        Sign Up
-        </Link>
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all text-sm font-medium hover:scale-105 text-white shadow-lg shadow-purple-500/20"
+          >
+            Sign Up
+          </Link>
         </div>
       </nav>
 
@@ -142,12 +141,18 @@ export function LandingPage() {
 
           {/* Hero Auth Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all font-semibold text-lg shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 active:scale-95">
+            <Link
+              to="/signup"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all font-semibold text-lg shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 active:scale-95 text-center"
+            >
               Sign Up — It's Free
-            </button>
-            <button className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all font-medium hover:scale-105 text-gray-300 hover:text-white">
+            </Link>
+            <Link
+              to="/signin"
+              className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all font-medium hover:scale-105 text-gray-300 hover:text-white text-center"
+            >
               Sign In to Your Brain
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -316,12 +321,18 @@ export function LandingPage() {
           
           {/* Final CTA Auth Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-10 py-5 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all font-bold text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 active:scale-95">
+            <Link
+              to="/signup"
+              className="px-10 py-5 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all font-bold text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 active:scale-95 text-center"
+            >
               Sign Up for Free
-            </button>
-            <button className="px-10 py-5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all font-semibold text-lg hover:scale-105 text-gray-300 hover:text-white">
+            </Link>
+            <Link
+              to="/signin"
+              className="px-10 py-5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all font-semibold text-lg hover:scale-105 text-gray-300 hover:text-white text-center"
+            >
               Sign In
-            </button>
+            </Link>
           </div>
           
           <p className="mt-4 text-xs text-gray-600">No credit card required • Open source forever</p>
